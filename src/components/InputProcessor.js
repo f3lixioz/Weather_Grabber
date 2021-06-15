@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 const zipCodeAPI = "http://localhost:8080/https://www.zipcodeapi.com/rest/c5X0BKe7yZuwgP4t2FmNmPYk3PBNNVROLnfxgjOn4yJXjkSyNup9FqziSihvvPsc/info.json/"
 //append "<zipCode>/degrees" to the end
@@ -32,9 +32,6 @@ export default class InputProcessor extends React.Component {
   render() {
     return (
       <div>
-        {this.state.name}
-        {this.state.email}
-        {this.state.zipCode}
         {this.state.latlng}
       </div>
     )
