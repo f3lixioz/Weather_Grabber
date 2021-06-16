@@ -81,7 +81,7 @@ export default class InputProcessor extends React.Component {
       await console.log('Location transformed into closest city and daily weather forcast using MetaWeatherAPI!')
 
       await this.setState({
-        output: <WeatherReport weatherData={this.state.weatherData} name={this.state.name} email={this.state.email} />
+        output: <WeatherReport weatherData={this.state.weatherData} name={this.state.name} email={this.state.email} coords={this.state.coords} />
       })
     }
   }

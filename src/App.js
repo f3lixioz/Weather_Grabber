@@ -1,16 +1,24 @@
 import './styles/App.css';
 import UserInput from './components/UserInput.js';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import NavBar from './components/NavBar.js';
+import Home from './components/Home.js';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Router>
+
+    <Router>
+      <NavBar />
+      <Switch>
+        <Route exact path="/TIO" className="App-header">
           <UserInput />
-        </Router>
-      </header>
-    </div>
+        </Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
+
   );
 }
 
