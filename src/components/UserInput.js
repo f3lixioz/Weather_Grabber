@@ -1,5 +1,5 @@
-import React from "react"
-import InputProcessor from "./InputProcessor"
+import React from "react";
+import InputProcessor from "./InputProcessor";
 
 export default class UserInput extends React.Component {
   constructor(props) {
@@ -70,4 +70,3 @@ export default class UserInput extends React.Component {
     }
   }
 }
-
