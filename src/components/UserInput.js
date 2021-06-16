@@ -35,34 +35,39 @@ export default class UserInput extends React.Component {
     if (this.state.inputAdded) {
       return (
         <div>
-          <button onClick={this.handleBack}>Back</button>
           <InputProcessor
             name={this.state.name}
             email={this.state.email}
-            zipCode={this.state.zipCode} />
+            zipCode={this.state.zipCode}
+            inputAdded={this.state.inputAdded} /> <br />
+          <button onClick={this.handleBack}>Reset</button>
         </div>
       )
     } else {
       return (
         <div>
           <form type="submit" onSubmit={this.handleSubmit}>
-            <label for="Name">Name</label>
+
+            <label htmlFor="Name">Name: </label>
             <input id="Name"
               type="text"
               placeholder="Elongated Muskrat"
               ref={(name) => this.name = name} />
-            <label for="Email">Email</label>
+
+            <label htmlFor="Email">Email: </label>
             <input id="Email"
               type="email"
-              placeholder="marsOrBust@spacex.com"
+              placeholder="marsorbust@spacex.com"
               ref={(email) => this.email = email} />
-            <label for="zipCode">Zip Code</label>
+
+            <label htmlFor="zipCode">Zip Code: </label>
             <input id="zipCode"
               type="text"
               pattern="[0-9]{5}"
               title="Please Enter 5-digit zip code"
               placeholder={94010}
-              ref={(zipCode) => this.zipCode = zipCode} />
+              ref={(zipCode) => this.zipCode = zipCode} /> <br />
+
             <button type="submit">Submit</button>
           </form>
         </div>
