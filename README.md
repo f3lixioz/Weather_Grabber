@@ -16,6 +16,11 @@
 - [ZipCodeAPI](https://www.zipcodeapi.com/): for transforming user input zip code into latitude and longitude for MetaWeather querying
 - [MetaWeather](https://www.metaweather.com/): for getting weather data based on the latitude and longitude of the user
 
+#### Notable modules used for this application:
+- [aors-Anywhere](https://github.com/Rob--W/cors-anywhere): proxy-server which adds CORS headers to the proxied request
+- [ics](https://github.com/adamgibbons/ics): formats inputs into iCalendar (ics)-compliant data
+- [create-react-app](https://github.com/facebook/create-react-app): sets-up a react app in one command
+
 ## Concept of Operations
 
 ![ConOps](./description/ConOps.png)

@@ -35,34 +35,49 @@ export default class UserInput extends React.Component {
     if (this.state.inputAdded) {
       return (
         <div>
-          <button onClick={this.handleBack}>Back</button>
           <InputProcessor
             name={this.state.name}
             email={this.state.email}
-            zipCode={this.state.zipCode} />
+            zipCode={this.state.zipCode}
+            inputAdded={this.state.inputAdded} />
+          <button onClick={this.handleBack}>Restart</button>
         </div>
       )
     } else {
       return (
         <div>
           <form type="submit" onSubmit={this.handleSubmit}>
-            <label for="Name">Name</label>
-            <input id="Name"
-              type="text"
-              placeholder="Elongated Muskrat"
-              ref={(name) => this.name = name} />
-            <label for="Email">Email</label>
-            <input id="Email"
-              type="email"
-              placeholder="marsOrBust@spacex.com"
-              ref={(email) => this.email = email} />
-            <label for="zipCode">Zip Code</label>
-            <input id="zipCode"
-              type="text"
-              pattern="[0-9]{5}"
-              title="Please Enter 5-digit zip code"
-              placeholder={94010}
-              ref={(zipCode) => this.zipCode = zipCode} />
+
+            {/* <label htmlFor="Name">Name: </label> */}
+            <div className="inputfields">
+              <input id="Name"
+                type="text"
+                // placeholder="Elongated Muskrat"
+                placeholder="Name"
+                ref={(name) => this.name = name} />
+            </div>
+
+            {/* <label htmlFor="Email">Email: </label> */}
+            <div className="inputfields">
+              <input id="Email"
+                type="email"
+                // placeholder="marsorbust@spacex.com"
+                placeholder="Email"
+                ref={(email) => this.email = email} />
+            </div>
+
+            {/* <label htmlFor="zipCode">Zip Code: </label> */}
+            <div className="inputfields">
+              <input id="zipCode"
+                type="text"
+                pattern="[0-9]{5}"
+                title="Please Enter 5-digit zip code"
+                // placeholder={94010}
+                placeholder="Zip Code"
+                ref={(zipCode) => this.zipCode = zipCode} />
+            </div>
+            <br />
+
             <button type="submit">Submit</button>
           </form>
         </div>
