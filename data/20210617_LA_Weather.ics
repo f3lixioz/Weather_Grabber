@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:Law&Zhang/weather_grabber
+METHOD:PUBLISH
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:c0adc7a2-b4b3-4b99-9478-97415766f385
+SUMMARY:Weather in Los Angeles on 2021-06-17
+DTSTAMP:20210617T193700Z
+DTSTART;VALUE=DATE:20210617
+DESCRIPTION:Hi\, Justin Law! Here is today's weather report for Los Angeles
+	\, with 68% confidence:\n\n    Date: 2021-06-17\n    Local time: 12:37:16\
+	n    Timezone: US/Pacific\n    Sunrise: 05:41:23\n    Sunset: 20:06:26\n\n
+	    Weather: Clear\n    Highs: 32°C\n    Lows: 20°C\n    Humidity: 49%\n  
+	  Wind Speed\, Direction: 5 mph\, SSW\n    Pressure: 1009 mb
+URL:https://github.com/justinthelaw/Weather_Grabber
+GEO:34;-118
+LOCATION:Los Angeles
+STATUS:CONFIRMED
+CATEGORIES:weather,daily report,Los Angeles,USSF SDI
+ORGANIZER;CN=Justin Law:mailto:justinthelaw@yahoo.com
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+ATTENDEE;RSVP=TRUE;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Justin Law:mai
+	lto:justinthelaw@yahoo.com
+DURATION:PT24H
+END:VEVENT
+END:VCALENDAR

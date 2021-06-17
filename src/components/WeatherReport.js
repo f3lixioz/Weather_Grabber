@@ -24,7 +24,8 @@ export default class WeatherReport extends React.Component {
       city: this.props.weatherData[12],
       timezone: this.props.weatherData[13],
       localTime: this.props.weatherData[14].substring(11, 19),
-      file: null
+      file: null,
+      fileDone: false
     }
 
     this.handleFile = this.handleFile.bind(this)
@@ -53,7 +54,7 @@ export default class WeatherReport extends React.Component {
     Pressure: ${this.state.airP} mb`
 
     const event = {
-      productId: 'Law+Zhang/weather_grabber',
+      productId: 'Law&Zhang/weather_grabber',
       start: [year, month, day],
       duration: { hours: 24, minutes: 0 },
       title: `Weather in ${this.state.city} on ${this.state.date}`,
@@ -76,7 +77,7 @@ export default class WeatherReport extends React.Component {
       }
 
       this.setState({
-        file: file
+        file: file.trim()
       })
     })
   }
@@ -84,7 +85,13 @@ export default class WeatherReport extends React.Component {
   async handleFile(event) {
     event.preventDefault()
     await this.formatICS()
-    await fileHandler(this.state.file)
+
+    const fileName = `${this.state.date.match(/[0-9]/g).join("")}_${this.state.city.match(/[A-Z]/g).join("")}_Weather`
+    await fileHandler(this.state.file, fileName)
+
+    await this.setState({
+      fileDone: true
+    })
   }
 
   render() {
@@ -115,7 +122,8 @@ export default class WeatherReport extends React.Component {
           Pressure: {this.state.airP} mb <br />
         </p>
 
-        <button onClick={this.handleFile}>Email Calander Event</button>
+        <button onClick={this.handleFile}>Email Calander Event</button> <br />
+        {this.state.fileDone ? `Your weather report is now available in ./data as ${this.state.date.match(/[0-9]/g).join("")}_${this.state.city.match(/[A-Z]/g).join("")}_Weather!` : ''}
       </div >
     )
   }

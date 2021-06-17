@@ -1,7 +1,8 @@
 import React from "react";
 import WeatherReport from './WeatherReport'
 
-// const zipCodeAPI = `http://localhost:8080/https://www.zipcodeapi.com/rest/c5X0BKe7yZuwgP4t2FmNmPYk3PBNNVROLnfxgjOn4yJXjkSyNup9FqziSihvvPsc/info.json/`
+// eslint-disable-next-line
+const zipCodeAPI = `http://localhost:8080/https://www.zipcodeapi.com/rest/c5X0BKe7yZuwgP4t2FmNmPYk3PBNNVROLnfxgjOn4yJXjkSyNup9FqziSihvvPsc/info.json/`
 //append "<zipCode>/degrees" to the end
 
 const metaWeatherAPI = `http://localhost:8080/https://www.metaweather.com/api/location/`

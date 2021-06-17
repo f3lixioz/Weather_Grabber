@@ -9,5 +9,5 @@ cors_proxy.createServer({
   requireHeader: ['origin', 'x-requested-with'],
   removeHeaders: ['cookie', 'cookie2']
 }).listen(port, host, function () {
-  console.log('> running CORS anywhere on ' + host + ':' + port);
+  console.log('> running CORS anywhere on localhost://:' + port);
 });
