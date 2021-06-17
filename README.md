@@ -8,7 +8,7 @@
 1. Fork and clone/pull down the entire repository
 2. While at the root of the repository, in your command line, execute ```npm install```
 3. While at the root of the repository, in your command line, execute ```npm start```
-    - This will execute ```node server.js``` and ```react-scripts start``` at the same time
+    - This will execute ```node ./server/server.js```, ```react-scripts start```, ```node ./server/nodejsapi/expressServer.js``` at the same time
     - The proxy-server (server.js) will run in the background on localhost://8080
     - The express server (expressServer.js) will run in the background on localhost://5001
     - The Weather Grabber application will pop-up in-browser on localhost://(port, e.g. 3000)
