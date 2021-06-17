@@ -10,7 +10,7 @@
 3. While at the root of the repository, in your command line, execute ```npm start```
     - This will execute ```node server.js``` and ```react-scripts start``` at the same time
     - The proxy-server (server.js) will run in the background on localhost://8080
-    - The Weather Grabber application will pop-up in-browser on localhost://<insert port here>
+    - The Weather Grabber application will pop-up in-browser on localhost://(port, e.g. 3000)
 
 #### APIs used for this application:
 - [ZipCodeAPI](https://www.zipcodeapi.com/): for transforming user input zip code into latitude and longitude for MetaWeather querying
