@@ -9,15 +9,15 @@
 2. While at the root of the repository, in your command line, execute ```npm install``
 3. While at the root of the repository, in your command line, execute ```npm start```
     - This will execute ```node server.js``` and ```react-scripts start``` at the same time
-    - The proxy-server will run in the background on localhost://8080
-    - The Weather Grabber application will pop-up in-browser on localhost://*insert port here*
+    - The proxy-server (server.js) will run in the background on localhost://8080
+    - The Weather Grabber application will pop-up in-browser on localhost://<insert port here>
 
 #### APIs used for this application:
 - [ZipCodeAPI](https://www.zipcodeapi.com/): for transforming user input zip code into latitude and longitude for MetaWeather querying
 - [MetaWeather](https://www.metaweather.com/): for getting weather data based on the latitude and longitude of the user
 
 #### Notable modules used for this application:
-- [aors-Anywhere](https://github.com/Rob--W/cors-anywhere): proxy-server which adds CORS headers to the proxied request
+- [cors-anywhere](https://github.com/Rob--W/cors-anywhere): proxy-server which adds CORS headers to the proxied request
 - [ics](https://github.com/adamgibbons/ics): formats inputs into iCalendar (ics)-compliant data
 - [create-react-app](https://github.com/facebook/create-react-app): sets-up a react app in one command
 
