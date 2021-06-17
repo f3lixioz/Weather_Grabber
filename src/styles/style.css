@@ -36,36 +36,73 @@
   text-align: center;
 }
 
-.inputfields {
-  appearance: none;
+/* .inputfields {
   -webkit-appearance:none;
 
-  box-sizing: border-box;
   color: white;
-  background-color: white;
+  background-color: black;
   text-align:center;
-  width: 200px;
+  width: 500px;
   padding: 5px;
   margin: 15px;
-  box-shadow:0 0 15px 4px black;
+  box-shadow:0 0 10px 2px white;
   border-radius: 10px;
-  outline: none;
   border-color: white;
-  border: none;
-}
+  border-width: 5px;
+} */
 
 button {
 
-  /* remove default behavior */
   appearance:none;
   -webkit-appearance:none;
 
-  padding:10px;
-  border:none;
-  background-color:#3F51B5;
   color:#fff;
+  background-color:green;
+  width: 300px;
+  padding:10px;
+  margin:10px;
   font-weight:600;
-  border-radius:5px;
-  width:100%;
+  border-radius:10px;
+  border:none;
 
 }
+
+  input {
+    color: white;
+    background-color: black;
+    text-align:center;
+    width: 300px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    border-color: white;
+    border-width: .5px;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .returnpage {
+    display: flex;
+    text-align: center;
+    align-items:center;
+    justify-content: center;
+  }
+
+  .restart {
+    margin: 0;
+    position: absolute;
+    /* top: 50%; */
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, 0%);
+    text-align: center;
+  }

@@ -1,5 +1,6 @@
 import React from "react";
 import '../styles/App.css';
+import fileHandler from './fileHandler';
 
 export default class WeatherReport extends React.Component {
   constructor(props) {
@@ -23,10 +24,11 @@ export default class WeatherReport extends React.Component {
       city: this.props.weatherData[12],
       timezone: this.props.weatherData[13],
       localTime: this.props.weatherData[14].substring(11, 19),
-      file: null
+      file: null,
+      fileDone: false
     }
 
-    this.handleSendEmail = this.handleSendEmail.bind(this)
+    this.handleFile = this.handleFile.bind(this)
   }
 
   formatICS() {
@@ -52,7 +54,7 @@ export default class WeatherReport extends React.Component {
     Pressure: ${this.state.airP} mb`
 
     const event = {
-      productId: 'Law+Zhang/weather_grabber',
+      productId: 'Law&Zhang/weather_grabber',
       start: [year, month, day],
       duration: { hours: 24, minutes: 0 },
       title: `Weather in ${this.state.city} on ${this.state.date}`,
@@ -69,31 +71,33 @@ export default class WeatherReport extends React.Component {
 
     ics.createEvent(event, (error, file) => {
       if (error) {
+        console.log('There was an error in ics.createEvent. Please check the UserInput.')
         console.log(error)
         return
       }
 
       this.setState({
-        file: file
+        file: file.trim()
       })
     })
   }
 
-  //TODO: find a way to get this file into an event or email or display for PoC
-  sendEmail(file) {
-    console.log(file)
-  }
+  async handleFile(event) {
+    event.preventDefault()
+    await this.formatICS()
 
-  async handleSendEmail(event) {
-    event.preventDefault();
-    await this.formatICS();
-    await this.sendEmail(this.state.file);
+    const fileName = `${this.state.date.match(/[0-9]/g).join("")}_${this.state.city.match(/[A-Z]/g).join("")}_Weather`
+    await fileHandler(this.state.file, fileName)
+
+    await this.setState({
+      fileDone: true
+    })
   }
 
   render() {
     return (
       <div>
-        <h3>Welcome, {this.state.name}!</h3>
+        < h3 > Welcome, {this.state.name}!</h3 >
         <p>Here is today's weather report, with {this.state.confidence}% confidence:</p>
         <h3>{this.state.city}</h3>
         <p>
@@ -118,8 +122,9 @@ export default class WeatherReport extends React.Component {
           Pressure: {this.state.airP} mb <br />
         </p>
 
-        <button onClick={this.handleSendEmail}>Email Calander Event</button>
-      </div>
+        <button onClick={this.handleFile}>Email Calander Event</button> <br />
+        {this.state.fileDone ? `Your weather report is now available in ./data as ${this.state.date.match(/[0-9]/g).join("")}_${this.state.city.match(/[A-Z]/g).join("")}_Weather!` : ''}
+      </div >
     )
   }
 }
