@@ -1,5 +1,6 @@
 import React from "react";
 import '../styles/App.css';
+import fileHandler from './fileHandler';
 
 export default class WeatherReport extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ export default class WeatherReport extends React.Component {
       file: null
     }
 
-    this.handleSendEmail = this.handleSendEmail.bind(this)
+    this.handleFile = this.handleFile.bind(this)
   }
 
   formatICS() {
@@ -69,6 +70,7 @@ export default class WeatherReport extends React.Component {
 
     ics.createEvent(event, (error, file) => {
       if (error) {
+        console.log('There was an error in ics.createEvent. Please check the UserInput.')
         console.log(error)
         return
       }
@@ -79,21 +81,16 @@ export default class WeatherReport extends React.Component {
     })
   }
 
-  //TODO: find a way to get this file into an event or email or display for PoC
-  sendEmail(file) {
-    console.log(file)
-  }
-
-  async handleSendEmail(event) {
-    event.preventDefault();
-    await this.formatICS();
-    await this.sendEmail(this.state.file);
+  async handleFile(event) {
+    event.preventDefault()
+    await this.formatICS()
+    await fileHandler(this.state.file)
   }
 
   render() {
     return (
       <div>
-        <h3>Welcome, {this.state.name}!</h3>
+        < h3 > Welcome, {this.state.name}!</h3 >
         <p>Here is today's weather report, with {this.state.confidence}% confidence:</p>
         <h3>{this.state.city}</h3>
         <p>
@@ -118,8 +115,8 @@ export default class WeatherReport extends React.Component {
           Pressure: {this.state.airP} mb <br />
         </p>
 
-        <button onClick={this.handleSendEmail}>Email Calander Event</button>
-      </div>
+        <button onClick={this.handleFile}>Email Calander Event</button>
+      </div >
     )
   }
 }

@@ -34,7 +34,7 @@ export default class UserInput extends React.Component {
   render() {
     if (this.state.inputAdded) {
       return (
-        <div>
+        <div className="restart">
           <InputProcessor
             name={this.state.name}
             email={this.state.email}
@@ -45,9 +45,11 @@ export default class UserInput extends React.Component {
       )
     } else {
       return (
-        <div>
+        <div className="center">
           <form type="submit" onSubmit={this.handleSubmit}>
-
+            <div className="homepage">
+              <h1>Tell me about you!</h1>
+            </div>
             {/* <label htmlFor="Name">Name: </label> */}
             <div className="inputfields">
               <input id="Name"

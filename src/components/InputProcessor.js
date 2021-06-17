@@ -1,7 +1,7 @@
 import React from "react";
 import WeatherReport from './WeatherReport'
 
-const zipCodeAPI = `http://localhost:8080/https://www.zipcodeapi.com/rest/c5X0BKe7yZuwgP4t2FmNmPYk3PBNNVROLnfxgjOn4yJXjkSyNup9FqziSihvvPsc/info.json/`
+// const zipCodeAPI = `http://localhost:8080/https://www.zipcodeapi.com/rest/c5X0BKe7yZuwgP4t2FmNmPYk3PBNNVROLnfxgjOn4yJXjkSyNup9FqziSihvvPsc/info.json/`
 //append "<zipCode>/degrees" to the end
 
 const metaWeatherAPI = `http://localhost:8080/https://www.metaweather.com/api/location/`
@@ -40,12 +40,18 @@ export default class InputProcessor extends React.Component {
 
   async componentDidMount() {
     if (!this.state.coords.length) {
-      await fetch(`${zipCodeAPI}${this.state.zipCode}/degrees`, { mode: 'cors' })
-        .then(response => response.json())
-        .then(data => this.setState({
-          coords: [data.lat, data.lng]
-        }))
-        .catch(err => err)
+      //========REAL Fetch Code========
+      // await fetch(`${zipCodeAPI}${this.state.zipCode}/degrees`, { mode: 'cors' })
+      //   .then(response => response.json())
+      //   .then(data => this.setState({
+      //     coords: [data.lat, data.lng]
+      //   }))
+      //   .catch(err => err)
+
+      //========MOCK Fetch Code========
+      await this.setState({
+        coords: [34, -118]
+      })
 
       await console.log('Zip code translated to latitude and longitude using ZipCodeAPI!')
 
@@ -88,9 +94,10 @@ export default class InputProcessor extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="returnpage center">
         {this.state.output ? this.state.output : "Loading your daily weather report..."}
-      </div>
+        <br />
+      </div >
     )
   }
 }
