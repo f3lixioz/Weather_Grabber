@@ -25,10 +25,11 @@ export default class WeatherReport extends React.Component {
       timezone: this.props.weatherData[13],
       localTime: this.props.weatherData[14].substring(11, 19),
       file: null,
-      fileDone: false
+      fileName: null,
     }
 
     this.handleFile = this.handleFile.bind(this)
+    this.handleDownload = this.handleDownload.bind(this)
   }
 
   formatICS() {
@@ -86,12 +87,13 @@ export default class WeatherReport extends React.Component {
     event.preventDefault()
     await this.formatICS()
 
-    const fileName = `${this.state.date.match(/[0-9]/g).join("")}_${this.state.city.match(/[A-Z]/g).join("")}_Weather`
-    await fileHandler(this.state.file, fileName)
+    await this.setState({ fileName: `${this.state.date.match(/[0-9]/g).join("")}_${this.state.city.match(/[A-Z]/g).join("")}_Weather` })
+    await fileHandler(this.state.file, this.state.fileName)
+  }
 
-    await this.setState({
-      fileDone: true
-    })
+  handleDownload(event) {
+    event.preventDefault()
+    window.location = `http://localhost:5001/download/${this.state.fileName}`
   }
 
   render() {
@@ -122,8 +124,8 @@ export default class WeatherReport extends React.Component {
           Pressure: {this.state.airP} mb <br />
         </p>
 
-        <button onClick={this.handleFile}>Email Calander Event</button> <br />
-        {this.state.fileDone ? `Your weather report is now available in ./data as ${this.state.date.match(/[0-9]/g).join("")}_${this.state.city.match(/[A-Z]/g).join("")}_Weather!` : ''}
+        {this.state.fileName ? <><button className="download" onClick={this.handleDownload}>Download Here</button><br /></> : ''}
+        <button onClick={this.handleFile}>Generate Calendar Event</button> <br />
       </div >
     )
   }

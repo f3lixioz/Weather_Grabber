@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:Law&Zhang/weather_grabber
+METHOD:PUBLISH
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:22657084-aac2-4153-a527-801f4e7f5250
+SUMMARY:Weather in Long Beach on 2021-06-17
+DTSTAMP:20210617T221400Z
+DTSTART;VALUE=DATE:20210617
+DESCRIPTION:Hi\, Justin Law! Here is today's weather report for Long Beach\
+	, with 70% confidence:\n\n    Date: 2021-06-17\n    Local time: 15:14:49\n
+	    Timezone: America/Los_Angeles\n    Sunrise: 05:41:56\n    Sunset: 20:0
+	5:27\n\n    Weather: Light Cloud\n    Highs: 24°C\n    Lows: 17°C\n    Hum
+	idity: 72%\n    Wind Speed\, Direction: 6 mph\, S\n    Pressure: 1010 mb
+URL:https://github.com/justinthelaw/Weather_Grabber
+GEO:33.830006;-118.387409
+LOCATION:Long Beach
+STATUS:CONFIRMED
+CATEGORIES:weather,daily report,Long Beach,USSF SDI
+ORGANIZER;CN=Justin Law:mailto:justinwingchunglaw@gmail.com
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+ATTENDEE;RSVP=TRUE;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Justin Law:mai
+	lto:justinwingchunglaw@gmail.com
+DURATION:PT24H
+END:VEVENT
+END:VCALENDAR

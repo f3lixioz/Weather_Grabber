@@ -1,38 +1,41 @@
 .topnav {
     background-color: black;
     overflow: hidden;
+    border-top: solid;
   }
 
-  .topnav a {
-    float: left;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 20px;
-  }
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  padding-right: 10%;
+}
 
-  .topnav a:hover {
-    background-color: grey;
-    color: black;
-  }
+.topnav a:hover {
+  background-color: grey;
+  color: black;
+}
 
-  .topnav a:active {
-    background-color: green;
-    color: white;
-  }
+.topnav a:active {
+  background-color: green;
+  color: white;
+}
 
-  .header {
-    background-color: black;
-    color: white;
-    margin: 0px;
-    padding: 10px 16px;
-  }
+.header {
+  background-color: black;
+  color: white;
+  margin: 0px;
+  padding: 20px 20px;
+}
 
 .homepage {
   background-color: black;
   color: white;
-  margin: 0px;
+  margin-left: 25px;
+  margin-right: 25px;
   text-align: center;
 }
 
@@ -67,42 +70,55 @@ button {
 
 }
 
-  input {
-    color: white;
-    background-color: black;
-    text-align:center;
-    width: 300px;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 10px;
-    border-color: white;
-    border-width: .5px;
-  }
+button:hover {
+  background-color:rgb(1, 153, 1);
+  cursor: pointer;
+}
 
-  input:focus {
-    outline: none;
-  }
+.download {
+  background-color: rgb(200, 0, 0);
+}
+
+.download:hover {
+  background-color:rgb(150, 0, 0);
+}
+
+input {
+  color: white;
+  background-color: black;
+  text-align:center;
+  width: 300px;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+  border-color: white;
+  border-width: .5px;
+}
+
+input:focus {
+  outline: none;
+}
 
 
-  .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .returnpage {
-    display: flex;
-    text-align: center;
-    align-items:center;
-    justify-content: center;
-  }
+.returnpage {
+  display: flex;
+  text-align: center;
+  align-items:center;
+  justify-content: center;
+}
 
-  .restart {
-    margin: 0;
-    position: absolute;
-    /* top: 50%; */
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, 0%);
-    text-align: center;
-  }
+.restart {
+  margin: 0;
+  position: absolute;
+  /* top: 50%; */
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
+  text-align: center;
+}

@@ -6,7 +6,7 @@ export default function NavBar() {
   return (
     <div className="topnav">
       <Link to="/" >Home</Link>
-      <Link to="/TIO" >Try It Out</Link>
+      <Link to="/app" >App</Link>
     </div>
   )
 }

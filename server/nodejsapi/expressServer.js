@@ -29,5 +29,11 @@ app.get('/echo', function (req, res) {
     })
 })
 
+app.get('/download/:name', function (req, res) {
+    res.download(`./data/${req.params.name}.ics`, function (error) {
+        if (error) console.log(error)
+    })
+})
+
 // HTTP SERVER
 app.listen(port, () => console.log(`> running express server on port: ${port}`))
