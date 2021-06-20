@@ -14,7 +14,7 @@
     "react-scripts": "4.0.3"
   },
   "scripts": {
-    "start": "node ./server/server.js & node ./server/nodejsapi/expressServer.js & react-scripts start",
+    "start": "node ./server/proxyServer.js & node ./server/expressServer/expressServer.js & react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
