@@ -50,31 +50,28 @@ export default class UserInput extends React.Component {
             <div className="homepage">
               <h1>Tell me about you!</h1>
             </div>
-            {/* <label htmlFor="Name">Name: </label> */}
+            <label htmlFor="Name" hidden>Name: </label>
             <div className="inputfields">
               <input id="Name"
                 type="text"
-                // placeholder="Elongated Muskrat"
                 placeholder="Name"
                 ref={(name) => this.name = name} />
             </div>
 
-            {/* <label htmlFor="Email">Email: </label> */}
+            <label htmlFor="Email" hidden>Email: </label>
             <div className="inputfields">
               <input id="Email"
                 type="email"
-                // placeholder="marsorbust@spacex.com"
                 placeholder="Email"
                 ref={(email) => this.email = email} />
             </div>
 
-            {/* <label htmlFor="zipCode">Zip Code: </label> */}
+            <label htmlFor="zipCode" hidden>Zip Code: </label>
             <div className="inputfields">
               <input id="zipCode"
                 type="text"
                 pattern="[0-9]{5}"
                 title="Please Enter 5-digit zip code"
-                // placeholder={94010}
                 placeholder="Zip Code"
                 ref={(zipCode) => this.zipCode = zipCode} />
             </div>
