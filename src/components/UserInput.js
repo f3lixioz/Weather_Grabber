@@ -75,7 +75,6 @@ export default class UserInput extends React.Component {
                 placeholder="Zip Code"
                 ref={(zipCode) => this.zipCode = zipCode} />
             </div>
-            <br />
 
             <button type="submit">Submit</button>
           </form>
