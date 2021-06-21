@@ -14,8 +14,8 @@ export default class WeatherReport extends React.Component {
       windD: this.props.weatherData[2],
       airP: this.props.weatherData[3].toFixed(0),
       date: this.props.weatherData[4],
-      lowT: this.props.weatherData[5].toFixed(0),
-      highT: this.props.weatherData[6].toFixed(0),
+      lowT: ((9 / 5 * (this.props.weatherData[5])) + 32).toFixed(0),
+      highT: ((9 / 5 * (this.props.weatherData[6])) + 32).toFixed(0),
       windS: this.props.weatherData[7].toFixed(0),
       humidity: this.props.weatherData[8].toFixed(0),
       confidence: this.props.weatherData[9].toFixed(0),
@@ -40,16 +40,14 @@ export default class WeatherReport extends React.Component {
     const day = parseInt(this.state.date.substring(8, 10))
 
     const report = `Hi, ${this.state.name}! Here is today's weather report for ${this.state.city}, with ${this.state.confidence}% confidence:
-
     Date: ${this.state.date}
     Local time: ${this.state.localTime}
     Timezone: ${this.state.timezone}
+    Weather: ${this.state.weather}
     Sunrise: ${this.state.sunrise}
     Sunset: ${this.state.sunset}
-
-    Weather: ${this.state.weather}
-    Highs: ${this.state.highT}°C
-    Lows: ${this.state.lowT}°C
+    High Temperature: ${this.state.highT}°F
+    Low Temperature: ${this.state.lowT}°F
     Humidity: ${this.state.humidity}%
     Wind Speed, Direction: ${this.state.windS} mph, ${this.state.windD}
     Pressure: ${this.state.airP} mb`
@@ -57,7 +55,7 @@ export default class WeatherReport extends React.Component {
     const event = {
       productId: 'Law&Zhang/weather_grabber',
       start: [year, month, day],
-      duration: { hours: 24, minutes: 0 },
+      duration: { days: 1 },
       title: `Weather in ${this.state.city} on ${this.state.date}`,
       description: report,
       location: this.state.city,
@@ -98,34 +96,34 @@ export default class WeatherReport extends React.Component {
 
   render() {
     return (
-      <div>
-        < h3 > Welcome, {this.state.name}!</h3 >
+      <div className="report">
+        <h2> Welcome, {this.state.name}!</h2>
         <p>Here is today's weather report, with {this.state.confidence}% confidence:</p>
-        <h3>{this.state.city}</h3>
-        <p>
-          Date: {this.state.date} <br />
-          Local time: {this.state.localTime} <br />
-          Timezone: {this.state.timezone}
-        </p>
+        <h2>{this.state.city}</h2>
 
-        <img src={`https://www.metaweather.com/static/img/weather/${this.state.icon}.svg`} alt={this.state.weather} width="40%" />
-        <h4>
+        <img src={`https://www.metaweather.com/static/img/weather/${this.state.icon}.svg`} alt={this.state.weather} width="50%" />
+        <h3>
           {this.state.weather}
-        </h4>
-        <p>
-          Sunrise: {this.state.sunrise} <br />
-          Sunset: {this.state.sunset}
-        </p>
-        <p>
-          Highs: {this.state.highT}°C <br />
-          Lows: {this.state.lowT}°C <br />
-          Humidity: {this.state.humidity}% <br />
-          Wind Speed, Direction: {this.state.windS} mph, {this.state.windD} <br />
-          Pressure: {this.state.airP} mb <br />
-        </p>
+        </h3>
 
-        {this.state.fileName ? <><button className="download" onClick={this.handleDownload}>Download Here</button><br /></> : ''}
-        <button onClick={this.handleFile}>Generate Calendar Event</button> <br />
+        <table>
+          <tbody>
+            <tr> <th>Date</th><td>{this.state.date}</td> </tr>
+            <tr> <th>Local Time</th><td>{this.state.localTime}</td> </tr>
+            <tr> <th>Timezone</th><td>{this.state.timezone}</td> </tr>
+            <tr> <th>Sunrise</th><td>{this.state.sunrise}</td> </tr>
+            <tr> <th>Sunset</th><td>{this.state.sunset}</td> </tr>
+            <tr> <th>High Temperature</th><td>{this.state.highT}°F</td> </tr>
+            <tr> <th>Low Temperature</th><td>{this.state.lowT}°F</td> </tr>
+            <tr> <th>Humidity</th><td>{this.state.humidity}%</td> </tr>
+            <tr> <th>Wind Speed</th><td>{this.state.windS} mph</td> </tr>
+            <tr> <th>Wind Direction</th><td>{this.state.windD}</td> </tr>
+            <tr> <th>Pressure</th><td>{this.state.airP} mb</td> </tr>
+          </tbody>
+        </table>
+
+        {this.state.fileName ? <><button className="download" onClick={this.handleDownload}>Download Here</button></> : ''}
+        <button onClick={this.handleFile}>Generate Calendar Event</button>
       </div >
     )
   }

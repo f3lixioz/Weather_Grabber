@@ -122,3 +122,20 @@ input:focus {
   transform: translate(-50%, 0%);
   text-align: center;
 }
+
+.instructions {
+  text-align: left;
+  align-items: left;
+}
+
+code{
+  padding: .2em;
+  margin: 0px;
+  font-size: 75%;
+  background-color: darkgrey;
+  border-radius: 6px;
+}
+
+b{
+color: lightblue
+}

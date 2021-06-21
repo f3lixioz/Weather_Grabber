@@ -42,17 +42,17 @@ export default class InputProcessor extends React.Component {
   async componentDidMount() {
     if (!this.state.coords.length) {
       //======== REAL Fetch ========
-      await fetch(`${zipCodeAPI}${this.state.zipCode}/degrees`, { mode: 'cors' })
-        .then(response => response.json())
-        .then(data => this.setState({
-          coords: [data.lat, data.lng]
-        }))
-        .catch(err => err)
+      // await fetch(`${zipCodeAPI}${this.state.zipCode}/degrees`, { mode: 'cors' })
+      //   .then(response => response.json())
+      //   .then(data => this.setState({
+      //     coords: [data.lat, data.lng]
+      //   }))
+      //   .catch(err => err)
 
       //======== MOCK Fetch ========
-      // await this.setState({
-      //   coords: [34, -118]
-      // })
+      await this.setState({
+        coords: [34, -118]
+      })
 
       await console.log('Zip code translated to latitude and longitude using ZipCodeAPI!')
 
