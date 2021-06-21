@@ -10,7 +10,7 @@ function App() {
     <Router>
       <NavBar />
       <Switch>
-        <Route exact path="/TIO" className="App-header">
+        <Route exact path="/app" className="App-header">
           <UserInput />
         </Route>
         <Route exact path="/">

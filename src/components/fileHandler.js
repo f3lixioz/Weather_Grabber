@@ -1,6 +1,7 @@
 export default async function fileHandler(file, fileName) {
 
-  await fetch('http://localhost:8080/http://localhost:5001/echo', { method: 'GET' })
+  await fetch('http://localhost:8080/http://localhost:5001/echo')
+    .catch(error => console.log(error))
     .then(res => res.json())
     .then(data => console.log(data.message))
 
