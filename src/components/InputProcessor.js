@@ -47,7 +47,7 @@ export default class InputProcessor extends React.Component {
         .then(data => this.setState({
           coords: [data.lat, data.lng]
         }))
-        .catch(err => err)
+        .catch(err => console.log(err))
 
       //======== MOCK Fetch ========
       // await this.setState({
@@ -82,8 +82,8 @@ export default class InputProcessor extends React.Component {
                 ]
               })
             })
-            .catch(err => err))
-        .catch(err => err)
+            .catch(err => console.log(err)))
+        .catch(err => alert("Fetching from ZipCodeAPI or MetaWeatherAPI failed due to one of the following:\n\n1. Invalid US zip code\n2. Invalid email address\n3. ZipCodeAPI is down or request limit exceeded\n4. MetaWeatherAPI is down or request limit exceeded\n\nSpecific errors are logged in the browser console. Please refresh the page and try again. "))
 
       await console.log('Location transformed into closest city and daily weather forcast using MetaWeatherAPI!')
 

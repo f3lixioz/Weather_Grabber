@@ -47,10 +47,8 @@ export default class UserInput extends React.Component {
       return (
         <div className="center">
           <form type="submit" onSubmit={this.handleSubmit}>
-            <div className="homepage">
-              <h1>Tell me about you!</h1>
-            </div>
-            <label htmlFor="Name" hidden>Name: </label>
+            <h1>Weather Grabber v1.0</h1>
+            <label htmlFor="Name" hidden>Name</label>
             <div className="inputfields">
               <input id="Name"
                 type="text"
@@ -58,7 +56,7 @@ export default class UserInput extends React.Component {
                 ref={(name) => this.name = name} />
             </div>
 
-            <label htmlFor="Email" hidden>Email: </label>
+            <label htmlFor="Email" hidden>Email</label>
             <div className="inputfields">
               <input id="Email"
                 type="email"
@@ -66,7 +64,7 @@ export default class UserInput extends React.Component {
                 ref={(email) => this.email = email} />
             </div>
 
-            <label htmlFor="zipCode" hidden>Zip Code: </label>
+            <label htmlFor="zipCode" hidden>Zip Code</label>
             <div className="inputfields">
               <input id="zipCode"
                 type="text"
@@ -75,11 +73,10 @@ export default class UserInput extends React.Component {
                 placeholder="Zip Code"
                 ref={(zipCode) => this.zipCode = zipCode} />
             </div>
-            <br />
 
             <button type="submit">Submit</button>
           </form>
-        </div>
+        </div >
       )
     }
   }

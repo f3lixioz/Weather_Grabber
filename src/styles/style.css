@@ -34,25 +34,9 @@
 .homepage {
   background-color: black;
   color: white;
-  margin-left: 25px;
-  margin-right: 25px;
   text-align: center;
+  margin: 0px 2vmin 0px 2vmin
 }
-
-/* .inputfields {
-  -webkit-appearance:none;
-
-  color: white;
-  background-color: black;
-  text-align:center;
-  width: 500px;
-  padding: 5px;
-  margin: 15px;
-  box-shadow:0 0 10px 2px white;
-  border-radius: 10px;
-  border-color: white;
-  border-width: 5px;
-} */
 
 button {
 
@@ -90,6 +74,7 @@ input {
   width: 300px;
   padding: 5px;
   margin: 5px;
+  margin-bottom: 10px;
   border-radius: 10px;
   border-color: white;
   border-width: .5px;
@@ -122,3 +107,30 @@ input:focus {
   transform: translate(-50%, 0%);
   text-align: center;
 }
+
+.instructions {
+  text-align: left;
+  align-items: left;
+}
+
+code {
+  padding: .2em;
+  margin: 0px;
+  font-size: 75%;
+  background-color: rgb(78, 78, 78);
+  border-radius: 6px;
+}
+
+b {
+color: rgb(115, 168, 247)
+}
+
+.repo {
+  color: rgb(106, 204, 82);
+  font-weight: bold;
+}
+
+.repo a:active, a:hover {
+  color: rgb(233, 235, 113)
+}
+
