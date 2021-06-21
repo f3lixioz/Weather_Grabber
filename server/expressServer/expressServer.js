@@ -36,4 +36,4 @@ app.get('/download/:name', function (req, res) {
 })
 
 // HTTP SERVER
-app.listen(port, () => console.log(`> running express server on port: ${port}`))
+app.listen(port, () => console.log(`> running express server on localhost:${port}`))
