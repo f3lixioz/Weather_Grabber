@@ -5,8 +5,9 @@ export default function Home() {
     <div className="homepage">
       <h1>About the App</h1>
       <p className="instructions">
-        The Weather Grabber is a simple web-application that takes user input and provides a daily weather forecast to the user. This application sends data through a location and weather API, and then formats the data into a daily weather report in .ics format. This application then creates a ready-to-send email with the daily weather summary.
+        The Weather Grabber is a simple web-application that takes user input and provides a daily weather forecast to the user. This application sends data through a location and weather API, and then formats the data into a daily weather report in .ics format. This application then creates a ready-to-send event with the daily weather summary.
       </p>
+      <img src={`https://github.com/justinthelaw/Weather_Grabber/raw/master/description/ConOps.png`} alt="ConOps.png" width="100%" />
       <h2>Instructions</h2>
       <p className="instructions">
         This application relies on a proxy-server for requests to APIs with strict access control policies and an express server for POST and GET of .ics data for the user. To start the proxy server, express server, and the application concurrently simply do the following:
@@ -14,6 +15,11 @@ export default function Home() {
       <ol className="instructions">
         <li>Fork and clone/pull down the entire repository</li>
         <li>While at the root of the repository, in your command line, execute <code>npm install</code></li>
+        <ul>
+          <li>This will execute <code>npm install</code> in the root of the directory</li>
+          <li>A post-install will also execute <code>mkdir data</code>, <code>npm update --force</code> and <code>cd ./server/expressServer && npm install</code></li>
+          <li>Extra install steps were scipted in order to install and fix broken node modules in the application (known issue in npm@7), and to provide local server storage for .ics files</li>
+        </ul>
         <li>While at the root of the repository, in your command line, execute <code>npm start</code></li>
         <ul>
           <li>This will execute <code>node ./server/server.js</code>, <code>react-scripts start</code>, <code>node ./server/nodejsapi/expressServer.js</code> at the same time</li>
@@ -22,7 +28,9 @@ export default function Home() {
           <li>The Weather Grabber application will pop-up in-browser on localhost://(port, e.g. 3000)</li>
         </ul>
       </ol>
+      <br />
       <h2>Credits</h2>
+      <p><b>Links</b> to credited APIs and packages can be found in the <a className="repo" href="https://github.com/justinthelaw/Weather_Grabber">Github repository</a> for this application</p>
       <h3 className="instructions">APIs Used</h3>
       <ul className="instructions">
         <li><b>ZipCodeAPI</b>: for transforming user input zip code into latitude and longitude for MetaWeather querying</li>

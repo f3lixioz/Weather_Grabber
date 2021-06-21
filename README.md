@@ -1,6 +1,6 @@
 # Weather Grabber
 
-#### The Weather Grabber is a simple web-application that takes user input and provides a daily weather forcast to the user. This application sends data through a location and weather API, and then formats the data into a daily weather report in .ics format. This application then creates a ready-to-send email with the daily weather summary.
+#### The Weather Grabber is a simple web-application that takes user input and provides a daily weather forcast to the user. This application sends data through a location and weather API, and then formats the data into a daily weather report in .ics format. This application then creates a ready-to-send event with the daily weather summary.
 
 ## Instructions
 
@@ -9,7 +9,7 @@
 2. While at the root of the repository, in your command line, execute ```npm install```
     - This will execute ```npm install``` in the root of the directory
     - A post-install will also execute ```mkdir data```, ```npm update --force``` and ```cd ./server/expressServer && npm install```
-    - Extra install steps were scipted in order to install and fix broken node modules in the server and application directories, and to provide local server storage for .ics files
+    - Extra install steps were scipted in order to install and fix broken node modules in the application (known issue in npm@7), and to provide local server storage for .ics files
 3. While at the root of the repository, in your command line, execute ```npm start```
     - This will execute ```node ./server/server.js```, ```react-scripts start```, ```node ./server/nodejsapi/expressServer.js``` at the same time
     - The proxy-server (server.js) will run in the background on localhost://8080

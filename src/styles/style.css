@@ -34,8 +34,6 @@
 .homepage {
   background-color: black;
   color: white;
-  margin-left: 25px;
-  margin-right: 25px;
   text-align: center;
 }
 
@@ -90,6 +88,7 @@ input {
   width: 300px;
   padding: 5px;
   margin: 5px;
+  margin-bottom: 10px;
   border-radius: 10px;
   border-color: white;
   border-width: .5px;
@@ -128,14 +127,24 @@ input:focus {
   align-items: left;
 }
 
-code{
+code {
   padding: .2em;
   margin: 0px;
   font-size: 75%;
-  background-color: darkgrey;
+  background-color: rgb(78, 78, 78);
   border-radius: 6px;
 }
 
-b{
-color: lightblue
+b {
+color: rgb(115, 168, 247)
 }
+
+.repo {
+  color: rgb(106, 204, 82);
+  font-weight: bold;
+}
+
+.repo a:active, a:hover {
+  color: rgb(233, 235, 113)
+}
+
