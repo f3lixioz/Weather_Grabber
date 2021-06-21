@@ -35,22 +35,8 @@
   background-color: black;
   color: white;
   text-align: center;
+  margin: 0px 2vmin 0px 2vmin
 }
-
-/* .inputfields {
-  -webkit-appearance:none;
-
-  color: white;
-  background-color: black;
-  text-align:center;
-  width: 500px;
-  padding: 5px;
-  margin: 15px;
-  box-shadow:0 0 10px 2px white;
-  border-radius: 10px;
-  border-color: white;
-  border-width: 5px;
-} */
 
 button {
 

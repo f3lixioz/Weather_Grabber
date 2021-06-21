@@ -7,7 +7,7 @@ export default function Home() {
       <p className="instructions">
         The Weather Grabber is a simple web-application that takes user input and provides a daily weather forecast to the user. This application sends data through a location and weather API, and then formats the data into a daily weather report in .ics format. This application then creates a ready-to-send event with the daily weather summary.
       </p>
-      <img src={`https://github.com/justinthelaw/Weather_Grabber/raw/master/description/ConOps.png`} alt="ConOps.png" width="100%" />
+      <img src={`https://github.com/justinthelaw/Weather_Grabber/raw/master/description/ConOps.png`} alt="ConOps.png" width="900px" />
       <h2>Instructions</h2>
       <p className="instructions">
         This application relies on a proxy-server for requests to APIs with strict access control policies and an express server for POST and GET of .ics data for the user. To start the proxy server, express server, and the application concurrently simply do the following:

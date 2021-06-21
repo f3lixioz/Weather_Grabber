@@ -47,9 +47,7 @@ export default class UserInput extends React.Component {
       return (
         <div className="center">
           <form type="submit" onSubmit={this.handleSubmit}>
-            <div className="homepage">
-              <h1>Weather Grabber v1.0</h1>
-            </div>
+            <h1>Weather Grabber v1.0</h1>
             <label htmlFor="Name" hidden>Name</label>
             <div className="inputfields">
               <input id="Name"
