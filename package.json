@@ -18,7 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postinstall": "mkdir data && npm update --force && cd ./server/expressServer && npm install"
+    "postinstall": "mkdir data && npm update --force && cd ./server/expressServer && npm install",
+    "cypress": "./node_modules/.bin/cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -37,5 +38,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/cypress": "^7.0.6",
+    "cypress": "^7.5.0"
   }
 }
