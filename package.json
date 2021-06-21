@@ -17,7 +17,8 @@
     "start": "node ./server/proxyServer.js & node ./server/expressServer/expressServer.js & react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postinstall": "npm update --force && cd ./server/expressServer && npm install"
   },
   "eslintConfig": {
     "extends": [
