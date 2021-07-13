@@ -1,4 +1,4 @@
-# Weather Grabber
+# Weather Report to ICS File
 
 #### The Weather Grabber is a simple web-application that takes user input and provides a daily weather forcast to the user. This application sends data through a location and weather API, and then formats the data into a daily weather report in .ics format. This application then creates a ready-to-send event with the daily weather summary.
 

@@ -5,14 +5,16 @@ import App from './App';
 const setup = () => {
   const app = render(<App />)
 
-  const appName = app.getByText("Weather Grabber", { exact: false });
+  const appName = app.getAllByText("Weather Grabber", { exact: false })[0];
   const homeLink = app.getByText("Home", { exact: true });
   const appLink = app.getByText("App", { exact: true });
+  const githubLink = app.getByText("Github repository", { exact: true })
 
   return {
     appName,
     homeLink,
-    appLink
+    appLink,
+    githubLink
   }
 }
 
@@ -26,12 +28,19 @@ describe('Weather grabber web-application is being rendered correctly', () => {
   })
 
   test('Clicking the "App" navlink brings the user to the app page', async () => {
-    const { appLink } = setup();
+    const { appLink, homeLink } = setup();
     await userEvent.click(appLink);
     expect(screen.getByRole('button')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('Name')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('Email')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('Zip Code')).toBeInTheDocument();
+    await userEvent.click(homeLink);
+  })
+
+  test('Github repo link exists on the Home page', async () => {
+    const { githubLink } = setup();
+
+    expect(githubLink).toBeInTheDocument();
   })
 
 })
